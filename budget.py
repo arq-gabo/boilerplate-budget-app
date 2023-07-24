@@ -63,14 +63,14 @@ def create_spend_chart(categories):
 
     # Loop for create the graph part
     tmp_graph = []
-    grahp = ""
+    graph = ""
     for k in range(100, -1, -10):
         for l in data_graph:
             if(l["percentage_category"] > k):
                 tmp_graph.append("o")
             else:
                 tmp_graph.append(" ")
-        grahp += str(k).rjust(3) + "| " + "  ".join(tmp_graph) + "  \n"
+        graph += str(k).rjust(3) + "| " + "  ".join(tmp_graph) + "  \n"
         tmp_graph = []
 
     # Horizontal Lines of the Graph
@@ -96,4 +96,4 @@ def create_spend_chart(categories):
             vertical_names += "\n"
         tmp_names = []
 
-    return title + grahp + horizontal_line + vertical_names
+    return title + graph + horizontal_line + vertical_names
